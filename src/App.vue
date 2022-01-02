@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="App">
+    <p>{{myname}}</p>
+    <Details>
+      <template v-slot:ap>
+        <p>apple</p>
+      </template>
+      <template v-slot:ba>
+        <p>banana</p>
+      </template>
+    </Details>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Details from './components/Details.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Details
+  },
+  data(){
+    return{
+      myname: 'akib'
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
